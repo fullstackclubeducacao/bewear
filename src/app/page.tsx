@@ -7,6 +7,7 @@ import { Header } from "@/components/common/header";
 import ProductList from "@/components/common/product-list";
 import { db } from "@/db";
 import { productTable } from "@/db/schema";
+import CarouselWithProgress from "@/components/customized/carousel/carousel-08";
 
 const Home = async () => {
   const products = await db.query.productTable.findMany({
@@ -25,17 +26,18 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="space-y-6">
-        <div className="px-5">
+      <div className="space-y-6 pt-16.5">
+        {/* <div className="px-5">
           <Image
-            src="/banner-01.png"
+            src="/banner-01.jpg"
             alt="Leve uma vida com estilo"
             height={0}
             width={0}
             sizes="100vw"
-            className="h-auto w-full"
+            className="h-auto w-full rounded-xl"
           />
-        </div>
+        </div> */}
+        <CarouselWithProgress/>
 
         <ProductList products={products} title="Mais vendidos" />
 

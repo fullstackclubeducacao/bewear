@@ -1,10 +1,15 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Raleway, Outfit } from "next/font/google";
 
 import { Toaster } from "@/components/ui/sonner";
 import ReactQueryProvider from "@/providers/react-query";
+import { cn } from "@/lib/utils";
+
+const outfitHeading = Outfit({subsets:['latin'],variable:'--font-heading'});
+
+const raleway = Raleway({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br" className={cn("font-sans", raleway.variable, outfitHeading.variable)}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
         <ReactQueryProvider>{children}</ReactQueryProvider>
         <Toaster position="top-center" />

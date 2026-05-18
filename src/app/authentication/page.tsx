@@ -9,7 +9,7 @@ const Authentication = async () => {
     <>
       <Header />
 
-      <div className="flex w-full flex-col gap-6 p-5">
+      <div className="flex w-full flex-col gap-6 p-5 pt-20">
         <Tabs defaultValue="sign-in">
           <TabsList>
             <TabsTrigger value="sign-in">Entrar</TabsTrigger>

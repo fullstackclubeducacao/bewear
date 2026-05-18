@@ -31,7 +31,7 @@ const AddToCartButton = ({
     <Button
       className="rounded-full"
       size="lg"
-      variant="outline"
+      variant="default"
       disabled={isPending}
       onClick={() => mutate()}
     >
